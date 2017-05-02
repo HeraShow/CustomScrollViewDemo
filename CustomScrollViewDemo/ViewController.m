@@ -32,9 +32,13 @@
     [self.view addSubview:shuffleView];
 
 }
+
+# pragma mark ---- 滚动视图 的代理方法 ----
 - (void)shuffleView:(WMShuffleFigure *)shuffleView clickImageAtIndex:(NSInteger)index
 {
-    
+    NSLog(@"滚动视图 图片数组 ---- %@", shuffleView.imageArray);
+    NSLog(@"图片数组 下表 ---- %ld", index);
+
 }
 
 - (void)didReceiveMemoryWarning {
