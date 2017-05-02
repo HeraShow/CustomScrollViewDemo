@@ -19,6 +19,7 @@
 		C367A4981DE3E7EB0046E17E /* mom.png in Resources */ = {isa = PBXBuildFile; fileRef = C367A4971DE3E7EB0046E17E /* mom.png */; };
 		C367A49A1DE3E7F30046E17E /* haqi.png in Resources */ = {isa = PBXBuildFile; fileRef = C367A4991DE3E7F30046E17E /* haqi.png */; };
 		C367A49C1DE3E7F90046E17E /* dun.png in Resources */ = {isa = PBXBuildFile; fileRef = C367A49B1DE3E7F90046E17E /* dun.png */; };
+		C3F8F3221EB8639C0084145E /* WMSigleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F8F3211EB8639C0084145E /* WMSigleAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		C367A4971DE3E7EB0046E17E /* mom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mom.png; sourceTree = "<group>"; };
 		C367A4991DE3E7F30046E17E /* haqi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haqi.png; sourceTree = "<group>"; };
 		C367A49B1DE3E7F90046E17E /* dun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dun.png; sourceTree = "<group>"; };
+		C3F8F3201EB8639C0084145E /* WMSigleAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSigleAlertView.h; sourceTree = "<group>"; };
+		C3F8F3211EB8639C0084145E /* WMSigleAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSigleAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				C367A4661DE3E6D80046E17E /* ViewController.m */,
 				C367A4921DE3E7000046E17E /* WMShuffleFigure.h */,
 				C367A4931DE3E7000046E17E /* WMShuffleFigure.m */,
+				C3F8F3201EB8639C0084145E /* WMSigleAlertView.h */,
+				C3F8F3211EB8639C0084145E /* WMSigleAlertView.m */,
 				C367A49B1DE3E7F90046E17E /* dun.png */,
 				C367A4991DE3E7F30046E17E /* haqi.png */,
 				C367A4681DE3E6D80046E17E /* Main.storyboard */,
@@ -292,6 +297,7 @@
 			files = (
 				C367A4671DE3E6D80046E17E /* ViewController.m in Sources */,
 				C367A4641DE3E6D80046E17E /* AppDelegate.m in Sources */,
+				C3F8F3221EB8639C0084145E /* WMSigleAlertView.m in Sources */,
 				C367A4611DE3E6D70046E17E /* main.m in Sources */,
 				C367A4941DE3E7000046E17E /* WMShuffleFigure.m in Sources */,
 			);
@@ -523,6 +529,7 @@
 				C367A48B1DE3E6D80046E17E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C367A48C1DE3E6D80046E17E /* Build configuration list for PBXNativeTarget "CustomScrollViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +538,7 @@
 				C367A48E1DE3E6D80046E17E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C367A48F1DE3E6D80046E17E /* Build configuration list for PBXNativeTarget "CustomScrollViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +547,7 @@
 				C367A4911DE3E6D80046E17E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
