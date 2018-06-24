@@ -110,7 +110,7 @@
             [_images addObject:imageArray[i]];
         }
     }
-    //防止在滚动过程中重新给imageArray赋值时报错
+    // 防止在滚动过程中重新给imageArray赋值时报错
     if (_currIndex >= _images.count)_currIndex = _images.count - 1;
     self.currImageView.image = _images[_currIndex];
     self.pageControl.numberOfPages = _images.count;
@@ -124,7 +124,7 @@
         self.scrollView.contentOffset = CGPointMake(self.width * 2, 0);
         self.currImageView.frame = CGRectMake(self.width * 2, 0, self.width, self.height);
         if (_changeMode == ChangeModeFade) {
-            //淡入淡出模式，两个imageView都在同一位置，改变透明度就可以了
+            // 淡入淡出模式，两个imageView都在同一位置，改变透明度就可以了
             _currImageView.frame = CGRectMake(0, 0, self.width, self.height);
             _otherImageView.frame = self.currImageView.frame;
             _otherImageView.alpha = 0;
@@ -135,7 +135,7 @@
         [self startTimer];
     }
     else {
-        //只要一张图片时，scrollview不可滚动，且关闭定时器
+        // 只要一张图片时，scrollview不可滚动，且关闭定时器
         self.scrollView.contentSize = CGSizeZero;
         self.scrollView.contentOffset = CGPointZero;
         self.currImageView.frame = CGRectMake(0, 0, self.width, self.height);
@@ -164,11 +164,11 @@
     if (_pageControl.hidden) return;
     
     CGSize size;
-    if (!_pageImageSize.width) {//没有设置图片，系统原有样式
+    if (!_pageImageSize.width) {// 没有设置图片，系统原有样式
         size = [_pageControl sizeForNumberOfPages:_pageControl.numberOfPages];
         size.height = 8;
     }
-    else {//设置图片了
+    else {// 设置图片了
         size = CGSizeMake(10 * (_pageControl.numberOfPages * 2 - 1), 10);
     }
     _pageControl.frame = CGRectMake(0, 0, size.width, size.height);
@@ -176,6 +176,7 @@
     CGFloat centerY = self.height - size.height * 0.5 - VERMARGIN;
     CGFloat pointY = self.height - size.height - VERMARGIN;
     
+    // 判断位置 调换
     if (_pagePosition == PositionDefault || _pagePosition == PositionBottomCenter)
         _pageControl.center = CGPointMake(self.width * 0.5, centerY);
     else if (_pagePosition == PositionTopCenter)
@@ -194,9 +195,9 @@
 
 #pragma mark --- 定时器 ---
 - (void)startTimer {
-    //如果只有一张图片，则直接返回，不开启定时器
+    // 如果只有一张图片，则直接返回，不开启定时器
     if (_images.count <= 1) return;
-    //如果定时器已开启，先停止再重新开启
+    // 如果定时器已开启，先停止再重新开启
     if (self.timer) [self stopTimer];
     self.timer = [NSTimer timerWithTimeInterval:_time < 2? DEFAULTTIME: _time target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
@@ -209,7 +210,7 @@
 #pragma mark --- 开启定时器 ---
 - (void)nextPage {
     if (_changeMode == ChangeModeFade) {
-        //淡入淡出模式，不需要修改scrollview偏移量，改变两张图片的透明度即可
+        // 淡入淡出模式，不需要修改scrollview偏移量，改变两张图片的透明度即可
         self.nextIndex = (self.currIndex + 1) % _images.count;
         self.otherImageView.image = _images[_nextIndex];
         
@@ -229,10 +230,10 @@
 #pragma mark --- 布局子控件 ---
 - (void)layoutSubviews {
     [super layoutSubviews];
-    //有导航控制器时，会默认在scrollview上方添加64的内边距，这里强制设置为0
+    // 有导航控制器时，会默认在scrollview上方添加64的内边距，这里强制设置为0
     _scrollView.contentInset = UIEdgeInsetsZero;
     _scrollView.frame = self.bounds;
-    //重新计算pageControl的位置
+    // 重新计算pageControl的位置
     self.pagePosition = self.pagePosition;
     [self setScrollViewContentSize];
 }
